@@ -5,14 +5,14 @@ using System.Text;
 
 namespace CoreAuthentication.Domain.User
 {
-    public class Customer : IEntity, IAggregateRoot
+    public class User : IEntity, IAggregateRoot
     {
         public Guid Id { get; private set; }
         public Name Name { get; private set; }
         public Email Email { get; private set; }
         public Mobile Mobile { get; private set; }
 
-        public Customer(Name name, Email email, Mobile mobile)
+        public User(Name name, Email email, Mobile mobile)
         {
             Id = new Guid();
             Name = name;
@@ -20,11 +20,11 @@ namespace CoreAuthentication.Domain.User
             Mobile = mobile;
         }
 
-        private Customer() { }
+        private User() { }
 
-        public static Customer Load(Guid id, Name name, Email email, Mobile mobile)
+        public static User Load(Guid id, Name name, Email email, Mobile mobile)
         {
-            Customer customer = new Customer
+            User customer = new User
             {
                 Id = id,
                 Name = name,
